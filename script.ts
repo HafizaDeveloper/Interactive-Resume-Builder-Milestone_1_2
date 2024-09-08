@@ -1,29 +1,28 @@
-const toggleEducationButton = document.getElementById('toggle-education')!;
-const educationSection = document.getElementById('education')!;
+const form = document.getElementById('resume-form') as HTMLFormElement;
+const resumeContainer = document.getElementById('resume') as HTMLDivElement;
 
-toggleEducationButton.addEventListener('click', () => {
-    if (educationSection.style.display === 'none') {
-        educationSection.style.display = 'block';
-    } else {
-        educationSection.style.display = 'none';
-    }
-});
-const toggleSkillsButton = document.getElementById('toggle-skills')!;
-const skillsSection = document.getElementById('skills')!;
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  
+  const name = (document.getElementById('name') as HTMLInputElement).value;
+  const email = (document.getElementById('email') as HTMLInputElement).value;
+  const phone = (document.getElementById('phone') as HTMLInputElement).value;
 
-toggleSkillsButton.addEventListener('click', () => {
-    if (skillsSection.style.display === 'none') {
-        skillsSection.style.display = 'block';
-    } else {
-        skillsSection.style.display = 'none';
-    }
-});
-const toggleWorkExperienceButton = document.getElementById('toggle-work-experience')!;
-const workExperienceSection = document.getElementById('work-experience')!;
-toggleWorkExperienceButton.addEventListener('click', () => {
-    if (workExperienceSection.style.display === 'none') {
-        workExperienceSection.style.display = 'block';
-    } else {
-        workExperienceSection.style.display = 'none';
-    }
+  const education = (document.getElementById('education') as HTMLInputElement).value;
+  const workExperience = (document.getElementById('work-experience') as HTMLTextAreaElement).value;
+  const skills = (document.getElementById('skills') as HTMLInputElement).value;
+  
+  const resume = `
+    <h1>${name}</h1>
+    <p>${email}</p>
+    <p>${phone}</p>
+    <h2>Education</h2>
+    <p>${education}</p>
+    <h2>Work Experience</h2>
+    <p>${workExperience}</p>
+    <h2>Skills</h2>
+    <p>${skills}</p>
+  `;
+  
+  resumeContainer.innerHTML = resume;
 });
