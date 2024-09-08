@@ -1,13 +1,26 @@
 var form = document.getElementById('resume-form');
-var resumeContainer = document.getElementById('resume');
+// Get the display elements
+var displayName = document.getElementById('display-name');
+var displayEmail = document.getElementById('display-email');
+var displayEducation = document.getElementById('display-education');
+var displayWork = document.getElementById('display-work');
+var displaySkills = document.getElementById('display-skills');
+var resumeSection = document.getElementById('generated-resume');
 form.addEventListener('submit', function (e) {
-    e.preventDefault();
+    e.preventDefault(); // Prevent page reload
+    // Get user input from the form
     var name = document.getElementById('name').value;
     var email = document.getElementById('email').value;
     var phone = document.getElementById('phone').value;
     var education = document.getElementById('education').value;
-    var workExperience = document.getElementById('work-experience').value;
+    var work = document.getElementById('work').value;
     var skills = document.getElementById('skills').value;
-    var resume = "\n    <h1>".concat(name, "</h1>\n    <p>").concat(email, "</p>\n    <p>").concat(phone, "</p>\n    <h2>Education</h2>\n    <p>").concat(education, "</p>\n    <h2>Work Experience</h2>\n    <p>").concat(workExperience, "</p>\n    <h2>Skills</h2>\n    <p>").concat(skills, "</p>\n  ");
-    resumeContainer.innerHTML = resume;
+    // Update the resume dynamically
+    displayName.textContent = "Name: ".concat(name);
+    displayEmail.textContent = "Email: ".concat(email);
+    displayEducation.textContent = "Education: ".concat(education);
+    displayWork.textContent = "Work Experience: ".concat(work);
+    displaySkills.textContent = "Skills: ".concat(skills);
+    // Show the generated resume section
+    resumeSection.classList.remove('hidden');
 });
