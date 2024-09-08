@@ -1,28 +1,31 @@
 const form = document.getElementById('resume-form') as HTMLFormElement;
-const resumeContainer = document.getElementById('resume') as HTMLDivElement;
+
+// Get the display elements
+const displayName = document.getElementById('display-name')!;
+const displayEmail = document.getElementById('display-email')!;
+const displayEducation = document.getElementById('display-education')!;
+const displayWork = document.getElementById('display-work')!;
+const displaySkills = document.getElementById('display-skills')!;
+const resumeSection = document.getElementById('generated-resume')!;
 
 form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  
-  const name = (document.getElementById('name') as HTMLInputElement).value;
-  const email = (document.getElementById('email') as HTMLInputElement).value;
-  const phone = (document.getElementById('phone') as HTMLInputElement).value;
+    e.preventDefault();  // Prevent page reload
 
-  const education = (document.getElementById('education') as HTMLInputElement).value;
-  const workExperience = (document.getElementById('work-experience') as HTMLTextAreaElement).value;
-  const skills = (document.getElementById('skills') as HTMLInputElement).value;
-  
-  const resume = `
-    <h1>${name}</h1>
-    <p>${email}</p>
-    <p>${phone}</p>
-    <h2>Education</h2>
-    <p>${education}</p>
-    <h2>Work Experience</h2>
-    <p>${workExperience}</p>
-    <h2>Skills</h2>
-    <p>${skills}</p>
-  `;
-  
-  resumeContainer.innerHTML = resume;
+    // Get user input from the form
+    const name = (document.getElementById('name') as HTMLInputElement).value;
+    const email = (document.getElementById('email') as HTMLInputElement).value;
+    const phone = (document.getElementById('phone') as HTMLInputElement).value;
+    const education = (document.getElementById('education') as HTMLInputElement).value;
+    const work = (document.getElementById('work') as HTMLInputElement).value;
+    const skills = (document.getElementById('skills') as HTMLInputElement).value;
+
+    // Update the resume dynamically
+    displayName.textContent = `Name: ${name}`;
+    displayEmail.textContent = `Email: ${email}`;
+    displayEducation.textContent = `Education: ${education}`;
+    displayWork.textContent = `Work Experience: ${work}`;
+    displaySkills.textContent = `Skills: ${skills}`;
+
+    // Show the generated resume section
+    resumeSection.classList.remove('hidden');
 });
