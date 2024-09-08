@@ -3,44 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Resume Builder</title>
+    <!-- Link to CSS file -->
     <link rel="stylesheet" href="style.css">
-    <title>Static Resume</title>
 </head>
 <body>
-    <header>
-        <div class="personal-info">
-            <h1><u>Mahnoor M.Ayub</u></h1>
-            <img src="profiile.jpg" alt="Profile Picture">
-            <p><b>Contact Details:</b> <a href="mailto:hafizamahnoor3005@gmail.com">hafizamahnoor3005@gmail.com</a> | <a href="phone:+92 3304958638">+92 3304958638</a></p>
+    <!-- Form for user input -->
+    <form id="resume-form">
+        <h1>Fill out your Resume</h1>
+        <!-- Personal Information -->
+        <div>
+          <label for="name">Name:</label>
+          <input type="text" id="name" required>
         </div>
-    </header>
-    <section id="education">
-        <h2><u>Education</u></h2>
-        <ul>
-            <li>Undergraduate in BS-CS at Benazir Bhutto Shaheed University Liyari, Karachi</li>
-            <li>Diploma of Associate Engineers (Computer Information Technology) (DAE CIT) From Muhammad Shafi Educational Complex in 2022</li>
-            <li>Matriculation Science (SSC) From Sabra Secondary School Karachi in 2019</li>
-        </ul>
-    </section>
-    <section id="skills">
-        <h2><u>Skills</u></h2>
-        <ul>
-            <li><b>Programming Languages:</b> C, C++, Flutter, Visual Basic & Java</li>
-            <li><b>Web development:</b> HTML, CSS, Typescript, JavaScript (under learning)</li>
-            <li><b>Graphics Designing:</b> Adobe Photoshop</li>
-            <li><b>Tools and Technologies:</b> Microsoft Visual Basic (6.0, 2008, 2010), VS Code</li>
-            <li><b>MS Office:</b> (Word, Excel, PowerPoint) </li>
-        </ul>
-    </section>
-    <section id="work-experience">
-        <h2><u>Work Experience</u></h2>
-        <ul>
-            <li>Fresh</li>
-        </ul>
-    </section>
-    <button id="toggle-education">Toggle Education</button>
-    <button id="toggle-skills">Toggle Skills</button>
-    <button id="toggle-work-experience">Toggle Work Experience</button>
-    <script src="script.js" defer></script>
+        <div>
+          <label for="email">Email:</label>
+          <input type="email" id="email" required>
+        </div>
+        <div>
+          <label for="phone">Phone:</label>
+          <input type="tel" id="phone" required>
+        </div>
+        
+        
+        <!-- Education -->
+        <div>
+          <label for="education">Education:</label>
+          <input type="text" id="education" required>
+        </div>
+        
+        <!-- Work Experience -->
+        <div>
+          <label for="work-experience">Work Experience:</label>
+          <input type="text" id="work-experience" required></input>
+        </div>
+        
+        <!-- Skills -->
+        <div>
+          <label for="skills">Skills:</label>
+          <input type="text" id="skills" required>
+  </div>
+  
+  <button id="generate-resume">Generate Resume</button>
+</form>
+
+<div id="resume"></div>
+<!-- Link to JavaScript file (compiled from TypeScript) -->
+<script src="script.js" defer></script>
 </body>
 </html>
+
+      
